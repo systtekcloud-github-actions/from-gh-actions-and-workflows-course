@@ -16,7 +16,7 @@ jobs:
           echo $GITHUB_SHA
           echo $GIYHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-      - name:
+      - name: Change Working Directory
         working-directory: /home/runner
         run: pwd
   display-wd-info-windows:
@@ -25,7 +25,7 @@ jobs:
       run:
         shell: pwsh
     steps:
-      - name: display Working Directory & List Files
+      - name: Display Working Directory & List Files
         run: |
           Get-Location
           dir
