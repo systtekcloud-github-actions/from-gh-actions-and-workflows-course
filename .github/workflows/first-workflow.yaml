@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: echo a string
         run: echo "Hello World"
+      - name: echo second string
+        run: echo "Hello Mister"
       - name: Multiline Command
         run: |
           node -v
