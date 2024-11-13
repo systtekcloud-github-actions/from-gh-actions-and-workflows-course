@@ -1,6 +1,8 @@
 name: Working Dirs & Shells
 on: [push]
 
+run-name: Workig Dirs & Shells
+
 defaults:
   run:
     shell: bash
