@@ -1,13 +1,21 @@
 name: Simple action
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: Who to greet in the log
+        required: true
+        default: 'SysttekCloud'
+        type: string
 
 jobs:
   simple-action:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
-        uses: actions/hello-world-javascript-action@ad41a6c27317e688719c813b0d6a25685a9bce54
+        id: greet
+        uses: actions/hello-world-javascript-action@main
         with:
-          who-to-greet: SysttekCloud
+          who-to-greet: ${{ inputs.who-to-greet }}
       - name: Log Greeting Time
         run: echo "${{ steps.greet.outputs.time }}"
