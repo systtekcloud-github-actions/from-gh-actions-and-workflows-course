@@ -1,6 +1,8 @@
 name: First Workflow
 on: [push]
 
+run-name: Deployed by @${{ github.actor }}
+
 jobs: 
   run-shell-commands: 
     runs-on: ubuntu-latest
