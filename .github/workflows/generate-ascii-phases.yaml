@@ -1,0 +1,32 @@
+name: Generate ASCII Artwork
+
+on:
+  [push]
+
+jobs:
+  ascii_build_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Execute Cowsay CMD
+      run: |
+        cd .github/workflows/scripts
+        chmod +x ascii-script-build.sh
+        ./ascii-script-build.sh
+
+  ascii_test_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Execute Cowsay CMD
+      run: |
+        cd .github/workflows/scripts
+        chmod +x ascii-script-test.sh
+        ./ascii-script-test.sh
+
+  ascii_deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Execute Cowsay CMD
+      run: |
+        cd .github/workflows/scripts
+        chmod +x ascii-script-deploy.sh
+        ./ascii-script-deploy.sh
