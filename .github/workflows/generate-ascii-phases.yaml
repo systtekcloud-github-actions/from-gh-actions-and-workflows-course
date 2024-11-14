@@ -1,4 +1,4 @@
-name: Generate ASCII Artwork
+name: Generate ASCII Artwork Phases
 
 on:
   [push]
@@ -7,7 +7,10 @@ jobs:
   ascii_build_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Execute Cowsay CMD
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Build Cowsay CMD
       run: |
         cd .github/workflows/scripts
         chmod +x ascii-script-build.sh
@@ -16,7 +19,10 @@ jobs:
   ascii_test_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Execute Cowsay CMD
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Test Cowsay CMD
       run: |
         cd .github/workflows/scripts
         chmod +x ascii-script-test.sh
@@ -25,7 +31,10 @@ jobs:
   ascii_deploy_job:
     runs-on: ubuntu-latest
     steps:
-    - name: Execute Cowsay CMD
+    - name: Checkout Repo
+      uses: actions/checkout@v4
+
+    - name: Deploy Cowsay CMD
       run: |
         cd .github/workflows/scripts
         chmod +x ascii-script-deploy.sh
