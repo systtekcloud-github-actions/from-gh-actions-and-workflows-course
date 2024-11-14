@@ -27,6 +27,11 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
+    - name: Checkout Repo Files
+      run: |
+        pwd
+        ls -ltRa
+
     - name: Test Cowsay CMD
       run: |
         chmod +x ./scripts/ascii-script-test.sh
