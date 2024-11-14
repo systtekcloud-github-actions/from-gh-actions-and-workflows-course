@@ -22,6 +22,7 @@ jobs:
         ls -ltra
 
   ascii_test_job:
+    needs: ascii_build_job
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
@@ -39,6 +40,7 @@ jobs:
         ls -ltra
 
   ascii_deploy_job:
+    needs: [ ascii_build_job, ascii_test_job ]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
