@@ -12,9 +12,8 @@ jobs:
 
     - name: Build Cowsay CMD
       run: |
-        cd .github/workflows/scripts
-        chmod +x ascii-script-build.sh
-        ./ascii-script-build.sh
+        chmod +x ./scripts/ascii-script-build.sh
+        ./scripts/ascii-script-build.sh
         
     - name: Checkout Repo Files
       run: |
@@ -28,16 +27,10 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
-    - name: Checkout Repo Files
-      run: |
-        pwd
-        ls -ltra
-        
     - name: Test Cowsay CMD
       run: |
-        cd .github/workflows/scripts
-        chmod +x ascii-script-test.sh
-        ./ascii-script-test.sh
+        chmod +x ./scripts/ascii-script-test.sh
+        ./scripts/ascii-script-test.sh
 
   ascii_deploy_job:
     needs: [ ascii_build_job, ascii_test_job ]
@@ -48,11 +41,5 @@ jobs:
 
     - name: Deploy Cowsay CMD
       run: |
-        cd .github/workflows/scripts
-        chmod +x ascii-script-deploy.sh
-        ./ascii-script-deploy.sh
-
-    - name: Checkout Repo Files
-      run: |
-        pwd
-        ls -ltra
+        chmod +x ./scripts/ascii-script-deploy.sh
+        .scripts/ascii-script-deploy.sh
