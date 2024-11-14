@@ -28,16 +28,16 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v4
 
+    - name: Checkout Repo Files
+      run: |
+        pwd
+        ls -ltra
+        
     - name: Test Cowsay CMD
       run: |
         cd .github/workflows/scripts
         chmod +x ascii-script-test.sh
         ./ascii-script-test.sh
-
-    - name: Checkout Repo Files
-      run: |
-        pwd
-        ls -ltra
 
   ascii_deploy_job:
     needs: [ ascii_build_job, ascii_test_job ]
