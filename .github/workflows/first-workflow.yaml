@@ -12,7 +12,7 @@ jobs:
       - name: echo second string
         run: echo "Hello Mister"
       - name: echo third string
-        run: echo "Hello Mister String"
+        run: echo "Hello String"
       - name: Multiline Command 
         run: |
           node -v
