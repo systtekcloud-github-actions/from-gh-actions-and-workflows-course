@@ -11,7 +11,9 @@ jobs:
         run: echo "Hello World"
       - name: echo second string
         run: echo "Hello Mister"
-      - name: Multiline Command
+      - name: echo third string
+        run: echo "Hello Mister String"
+      - name: Multiline Command 
         run: |
           node -v
           npm -v
